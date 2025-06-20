@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf APP | Professional Glassmorphism</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <header>
+        <nav>
+            <h1><span class="header-icon">📖</span> Bookshelf App</h1>
+        </nav>
+    </header>
+
+    <main>
+        <section id="search-section" class="glassmorphism-card">
+            <h2 class="section-title text-violet">Find a Book</h2>
+            <form id="searchBook" data-testid="searchBookForm">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <label for="searchBookTitle" class="sr-only">Search by Title or Author</label>
+                    <input id="searchBookTitle" type="search" data-testid="searchBookFormTitleInput" placeholder="Search by Title or Author..." class="form-input" />
+                </div>
+            </form>
+        </section>
+
+        <div class="content-grid">
+            <aside class="sidebar">
+                <section class="glassmorphism-card">
+                    <h2 id="form-section-title" class="section-title text-cyan">Add New Book</h2>
+                    <form id="bookForm" data-testid="bookForm">
+                        <div class="form-group">
+                            <label for="bookFormTitle">Title</label>
+                            <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" class="form-input" />
+                        </div>
+                        <div class="form-group">
+                            <label for="bookFormAuthor">Author</label>
+                            <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" class="form-input" />
+                        </div>
+                        <div class="form-group">
+                            <label for="bookFormYear">Year</label>
+                            <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" class="form-input" />
+                        </div>
+                        <div class="form-group-checkbox">
+                            <input id="bookFormIsComplete" type="checkbox" data-testid="bookFormIsCompleteCheckbox" class="form-checkbox" />
+                            <label for="bookFormIsComplete">Finished reading</label>
+                        </div>
+                        <div id="bookFormActions" class="form-actions">
+                            <button id="bookFormSubmit" type="submit" class="button-primary bg-cyan" data-testid="bookFormSubmitButton">
+                                Add to Shelf
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </aside>
+
+            <div class="content-area">
+                <section class="bookshelf">
+                    <div class="bookshelf-header">
+                        <h2 class="section-title text-blue">Unfinished Books</h2>
+                        <span id="incompleteCount" class="book-counter">0 books</span>
+                    </div>
+                    <div id="incompleteBookList" data-testid="incompleteBookList" class="book-grid"></div>
+                </section>
+                <section class="bookshelf">
+                    <div class="bookshelf-header">
+                        <h2 class="section-title text-green">Finished Books</h2>
+                        <span id="completeCount" class="book-counter">0 books</span>
+                    </div>
+                    <div id="completeBookList" data-testid="completeBookList" class="book-grid"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="copyright-year">2025</span> Bookshelf App by Aprido Ilham.</p>
+    </footer>
+
+    <script src="https://unpkg.com/notie/dist/notie.min.js"></script>
+    <script defer src="main.js"></script>
+</body>
+</html>
